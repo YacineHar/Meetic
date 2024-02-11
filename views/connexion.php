@@ -34,11 +34,16 @@ include '../Controller/ConnexController.php';
         </form>
         <div class="connexion">
             <a href="modification.php" class="connexion-button">Modifier mon compte</a><br>
-        </div>
-        
+        </div><br>
+
         <div class="connexion">
-            <label for="connexion">Vous n'avez pas de compte ?</label>
+            <label for="sujet">Vous n'avez pas de compte ?<br></label>
             <a href="inscription.php" class="connexion-button">S'inscrire</a><br>
+        </div><br>
+
+        <div class="connexion">
+        <label for="sujet">En quête d'amour ?<br></label>
+            <a href="Recherche.html" class="connexion-button">Rechercher un compte</a><br>
         </div>
     </div>
 </body>

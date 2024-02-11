@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de compte</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="inscription">
+    <div class="top">
+        <h1>Recherche de compte</h1>
+        <img src="meetic.jpg" alt="Logo meetic" />
+    </div>
+    <form action="../Controller/rechercheController.php" method="post">
+        <div>
+            <label for="genre">Genre</label>
+            <select name="genre" id="genre" required>
+                <option value="" disabled selected hidden>Sélectionner un genre</option>
+                <option value="Homme">Homme</option>
+                <option value="Femme">Femme</option>
+                <option value="Autre...">Autre</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="ville">Ville</label>
+            <input type="text" id="ville" name="ville" placeholder="Sélectionnez une ville" required>
+        </div>
+        
+        <button type="submit">Rechercher</button>
+    </form>
+    
+    <br>
+    <div class="connexion">
+        <label for="sujet">Vous n'avez pas de compte ?<br></label>
+        <a href="inscription.php" class="connexion-button">S'inscrire</a><br>
+    </div><br>
+
+    <div class="connexion">
+        <label for="sujet">Vous voulez simplement vous connecter ?<br></label>
+        <a href="connexion.php" class="connexion-button">Se connecter</a><br>
+    </div>
+</div>
+</body>
+</html>

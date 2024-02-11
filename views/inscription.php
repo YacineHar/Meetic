@@ -78,10 +78,14 @@ include '../Controller/InscriptController.php';
         <label for="sujet">Ou<br></label>
         <div class="connexion">
             <a href="modification.php" class="connexion-button">Modifier mon compte</a><br>
+        </div><br>
+
+        <label for="sujet">En quête d'amour ?<br></label>
+        <div class="connexion">
+            <a href="Recherche.html" class="connexion-button">Rechercher un compte</a><br>
         </div>
+
         </form>
-        </div>
-        <div>
         </div>
         <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="script.js"></script> -->

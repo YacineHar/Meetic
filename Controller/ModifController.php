@@ -12,6 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $new_ville = $_POST['ville'];
     $new_mdp = $_POST['confirm'];
 
+    $hashmdp = password_hash($new_mdp, PASSWORD_DEFAULT);
+
     $modifications = "UPDATE user SET email = :new_email, nom = :nom, prenom = :prenom, date = :date, genre = :genre, ville = :ville, mdp = :mdp WHERE email = :email";
     $bdduser = $bdd->prepare($modifications);
     $bdduser->bindParam(':new_email', $new_email);
@@ -20,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $bdduser->bindParam(':date', $new_date);
     $bdduser->bindParam(':genre', $new_genre);
     $bdduser->bindParam(':ville', $new_ville);
-    $bdduser->bindParam(':mdp', $new_mdp);
+    $bdduser->bindParam(':mdp', $hashmdp);
     $bdduser->bindParam(':email', $email);
 
     if ($bdduser->execute())
