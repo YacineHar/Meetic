@@ -15,11 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     {
         session_start();
         $_SESSION['user_id'] = $user['id'];
-        header("Location: validation.html");
+        header("Location: validation_connex.html");
         exit();
     }
     else
     {
-        header("Location: échec.html");
+        header("Location: échec_connex.html");
     }
 }

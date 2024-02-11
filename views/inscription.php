@@ -1,6 +1,6 @@
 <?php
 
-include '../Controller/InscriptController';
+include '../Controller/InscriptController.php';
 
 ?>
 

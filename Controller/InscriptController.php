@@ -13,4 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 
     $bdduser = $bdd->prepare("INSERT INTO user (nom, prenom, genre, email, date, ville, mdp) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $bdduser->execute([$nom, $prenom, $genre, $email, $date, $ville, $mdp]);
+    
+    header("Location: Validation_Inscript.html");
+    exit();
 }
