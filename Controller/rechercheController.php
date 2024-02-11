@@ -1,20 +1,19 @@
 <?php
 $bdd = new PDO('mysql:host=localhost;dbname=user;charset=utf8', 'Yacine', '192002');
 
+include '../model/RechercheModel.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $genre = $_POST['genre'];
     $ville = $_POST['ville'];
 
-    $recherche = "SELECT * FROM user WHERE genre = :genre AND ville = :ville";
-    $bdduser = $bdd->prepare($recherche);
-    $bdduser->bindParam(':genre', $genre);
-    $bdduser->bindParam(':ville', $ville);
+    $rechercheModel = new RechercheModel($bdd);
 
-    if ($bdduser->execute())
+    $values = $rechercheModel->searchUsers($genre, $ville);
+
+    if ($values !== false)
     {
-        $values = $bdduser->fetchAll(PDO::FETCH_ASSOC);
-        
         ?>
             <!DOCTYPE html>
             <html lang="en">

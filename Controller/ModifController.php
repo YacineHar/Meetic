@@ -1,5 +1,10 @@
 <?php
+
 $bdd = new PDO('mysql:host=localhost;dbname=user;charset=utf8', 'Yacine', '192002');
+
+include '../model/ModifModel.php';
+
+$ModifModel = new ModifModel($bdd);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
@@ -12,20 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $new_ville = $_POST['ville'];
     $new_mdp = $_POST['confirm'];
 
-    $hashmdp = password_hash($new_mdp, PASSWORD_DEFAULT);
+    $modif = $ModifModel->updateUser($email, $new_email, $new_nom, $new_prenom, $new_date, $new_genre, $new_ville, $new_mdp);
 
-    $modifications = "UPDATE user SET email = :new_email, nom = :nom, prenom = :prenom, date = :date, genre = :genre, ville = :ville, mdp = :mdp WHERE email = :email";
-    $bdduser = $bdd->prepare($modifications);
-    $bdduser->bindParam(':new_email', $new_email);
-    $bdduser->bindParam(':nom', $new_nom);
-    $bdduser->bindParam(':prenom', $new_prenom);
-    $bdduser->bindParam(':date', $new_date);
-    $bdduser->bindParam(':genre', $new_genre);
-    $bdduser->bindParam(':ville', $new_ville);
-    $bdduser->bindParam(':mdp', $hashmdp);
-    $bdduser->bindParam(':email', $email);
-
-    if ($bdduser->execute())
+    if ($modif)
     {
         header("Location: ../views/Validation_modif.html");
         exit();

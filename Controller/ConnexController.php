@@ -2,24 +2,27 @@
 
 $bdd = new PDO('mysql:host=localhost;dbname=user;charset=utf8', 'Yacine', '192002');
 
+include '../model/connexModel.php';
+
+$ConnexModel = new ConnexModel($bdd);
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     $email = $_POST['email'];
     $mdp = $_POST['mdp'];
 
-    $bdduser = $bdd->prepare("SELECT id, mdp FROM user WHERE email = ?");
-    $bdduser->execute([$email]);
-    $user = $bdduser->fetch();
+    $user = $ConnexModel->getUserByEmail($email);
 
     if ($user && password_verify($mdp, $user['mdp']))
     {
         session_start();
-        $_USER['user_id'] = $user['id'];
+        $_SESSION['user_id'] = $user['id'];
         header("Location: validation_connex.html");
         exit();
     }
     else
     {
         header("Location: échec_connex.html");
+        exit();
     }
 }
