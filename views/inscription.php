@@ -46,7 +46,7 @@ include '../Controller/InscriptController.php';
                 <input type="text" id="ville" name="ville" placeholder="Paris" required>
             </div>
         <div>
-            <label for="email">Votre e-mail &nbsp; @gmail.com</label>
+            <label for="email">Votre e-mail </label>
             <input type="text" id="email" name="email" placeholder="monadresse@mail.com" required>
         </div>
         <div>
@@ -75,11 +75,10 @@ include '../Controller/InscriptController.php';
             <label for="connexion">Vous avez déja un compte ?</label>
             <a href="connexion.php" class="connexion-button">Se connecter</a><br>
         </div>
-        <label for="sujet">Autre<br></label>
-        <select name="sujet" id="sujet">
-            <option value="" disabled selected hidden>Choisissez le sujet de votre requête</option>
-            <option value="probleme-compte">Supprimer mon compte</option>
-        </select>
+        <label for="sujet">Ou<br></label>
+        <div class="connexion">
+            <a href="modification.php" class="connexion-button">Modifier mon compte</a><br>
+        </div>
         </form>
         </div>
         <div>

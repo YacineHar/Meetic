@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     if ($user && password_verify($mdp, $user['mdp']))
     {
         session_start();
-        $_SESSION['user_id'] = $user['id'];
+        $_USER['user_id'] = $user['id'];
         header("Location: validation_connex.html");
         exit();
     }
