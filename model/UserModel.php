@@ -8,7 +8,7 @@ class UserModel
     }
     public function inscription($nom, $prenom, $genre, $email, $date, $ville, $mdp)
     {
-            $stmt = $this->bdd->prepare("INSERT INTO user (nom, prenom, genre, email, date, ville, mdp) VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->execute([$nom, $prenom, $genre, $email, $date, $ville, $mdp]);
+            $bdduser = $this->bdd->prepare("INSERT INTO user (nom, prenom, genre, email, date, ville, mdp) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $bdduser->execute([$nom, $prenom, $genre, $email, $date, $ville, $mdp]);
     }
 }

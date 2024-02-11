@@ -1,3 +1,9 @@
+<?php
+
+include '../Controller/ConnexController.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +19,7 @@
             <img src="meetic.jpg" alt="Logo meetic" />
         </div>
         <p>Vous avez déjà un compte ? Connectez-vous !</p>
-        <form action="login.php" method="post">
+        <form action="?action=connexion" method="post">
             <div>
                 <label for="email">Votre e-mail &nbsp; @gmail.com</label>
                 <input type="text" id="email" name="email" placeholder="monadresse@mail.com" required>

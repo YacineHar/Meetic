@@ -1,6 +1,6 @@
 <?php
 
-include '../Controller/AccueilController';
+include '../Controller/InscriptController';
 
 ?>
 
@@ -73,7 +73,7 @@ include '../Controller/AccueilController';
         </div>
         <div class="connexion">
             <label for="connexion">Vous avez déja un compte ?</label>
-            <a href="connexion.html" class="connexion-button">Se connecter</a><br>
+            <a href="connexion.php" class="connexion-button">Se connecter</a><br>
         </div>
         <label for="sujet">Autre<br></label>
         <select name="sujet" id="sujet">
